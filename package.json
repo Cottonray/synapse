@@ -1,0 +1,7 @@
+{
+  "name": "ReactNative_Synapse",
+  "packageManager": "yarn@4.9.2",
+  "workspaces": [
+    "packages/*"
+  ]
+}
