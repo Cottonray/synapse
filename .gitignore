@@ -17,3 +17,4 @@ node_modules
 .pnp.*
 .DS_Store
 /.idea
+apps/mobile/ios/Podfile.lock
