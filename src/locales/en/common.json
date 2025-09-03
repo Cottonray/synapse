@@ -1,0 +1,29 @@
+{
+  "navigation": {
+    "home": "Home",
+    "analytics": "Analytics",
+    "setting": "Settings"
+  },
+  "screens": {
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome!"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Data analytics screen."
+    },
+    "setting": {
+      "title": "Settings",
+      "language": "Language Settings",
+      "korean": "한국어",
+      "english": "English"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close"
+  }
+}

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import '../locales/i18n'; // i18n 초기화
 
 export interface AppProviderProps {
   children: ReactNode;
