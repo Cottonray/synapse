@@ -1,6 +1,7 @@
 import React from 'react';
-import AppProvider from './provider/AppProvider';
-import RootNavigation from './navigation/RootNavigation';
+import 'react-native-reanimated';
+import AppProvider from './providers/AppProvider';
+import RootNavigation from './navigations/RootNavigation';
 
 const App = () => {
   return (

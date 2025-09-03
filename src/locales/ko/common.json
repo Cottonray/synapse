@@ -17,7 +17,11 @@
       "title": "설정",
       "language": "언어 설정",
       "korean": "한국어",
-      "english": "English"
+      "english": "English",
+      "theme": "테마 설정",
+      "light": "라이트 모드",
+      "dark": "다크 모드",
+      "system": "시스템 설정 따르기"
     }
   },
   "common": {

@@ -17,7 +17,11 @@
       "title": "Settings",
       "language": "Language Settings",
       "korean": "한국어",
-      "english": "English"
+      "english": "English",
+      "theme": "Theme Settings",
+      "light": "Light Mode",
+      "dark": "Dark Mode",
+      "system": "Follow System"
     }
   },
   "common": {

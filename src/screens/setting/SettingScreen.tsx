@@ -1,101 +1,88 @@
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../../hooks/useTheme';
+import {
+  Container,
+  Title,
+  Section,
+  SectionTitle,
+  OptionButton,
+  ButtonText,
+} from './SettingScreen.style';
 
 const SettingScreen = () => {
   const { t, i18n } = useTranslation();
+  const { theme, themeMode, setThemeMode } = useTheme();
 
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{t('screens.setting.title')}</Text>
+    <Container theme={theme}>
+      <Title theme={theme}>{t('screens.setting.title')}</Title>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>{t('screens.setting.language')}</Text>
+      <Section>
+        <SectionTitle theme={theme}>
+          {t('screens.setting.language')}
+        </SectionTitle>
 
-        <TouchableOpacity
-          style={[
-            styles.languageButton,
-            i18n.language === 'ko' && styles.activeButton,
-          ]}
+        <OptionButton
+          theme={theme}
+          isActive={i18n.language === 'ko'}
           onPress={() => changeLanguage('ko')}
         >
-          <Text
-            style={[
-              styles.buttonText,
-              i18n.language === 'ko' && styles.activeButtonText,
-            ]}
-          >
+          <ButtonText theme={theme} isActive={i18n.language === 'ko'}>
             {t('screens.setting.korean')}
-          </Text>
-        </TouchableOpacity>
+          </ButtonText>
+        </OptionButton>
 
-        <TouchableOpacity
-          style={[
-            styles.languageButton,
-            i18n.language === 'en' && styles.activeButton,
-          ]}
+        <OptionButton
+          theme={theme}
+          isActive={i18n.language === 'en'}
           onPress={() => changeLanguage('en')}
         >
-          <Text
-            style={[
-              styles.buttonText,
-              i18n.language === 'en' && styles.activeButtonText,
-            ]}
-          >
+          <ButtonText theme={theme} isActive={i18n.language === 'en'}>
             {t('screens.setting.english')}
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+          </ButtonText>
+        </OptionButton>
+      </Section>
+
+      <Section>
+        <SectionTitle theme={theme}>{t('screens.setting.theme')}</SectionTitle>
+
+        <OptionButton
+          theme={theme}
+          isActive={themeMode === 'light'}
+          onPress={() => setThemeMode('light')}
+        >
+          <ButtonText theme={theme} isActive={themeMode === 'light'}>
+            {t('screens.setting.light')}
+          </ButtonText>
+        </OptionButton>
+
+        <OptionButton
+          theme={theme}
+          isActive={themeMode === 'dark'}
+          onPress={() => setThemeMode('dark')}
+        >
+          <ButtonText theme={theme} isActive={themeMode === 'dark'}>
+            {t('screens.setting.dark')}
+          </ButtonText>
+        </OptionButton>
+
+        <OptionButton
+          theme={theme}
+          isActive={themeMode === 'system'}
+          onPress={() => setThemeMode('system')}
+        >
+          <ButtonText theme={theme} isActive={themeMode === 'system'}>
+            {t('screens.setting.system')}
+          </ButtonText>
+        </OptionButton>
+      </Section>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 30,
-    textAlign: 'center',
-  },
-  section: {
-    marginBottom: 30,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 15,
-    color: '#333',
-  },
-  languageButton: {
-    backgroundColor: '#f5f5f5',
-    padding: 15,
-    borderRadius: 8,
-    marginBottom: 10,
-    borderWidth: 2,
-    borderColor: 'transparent',
-  },
-  activeButton: {
-    backgroundColor: '#007AFF',
-    borderColor: '#007AFF',
-  },
-  buttonText: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#333',
-  },
-  activeButtonText: {
-    color: '#fff',
-    fontWeight: '600',
-  },
-});
 
 export default SettingScreen;
