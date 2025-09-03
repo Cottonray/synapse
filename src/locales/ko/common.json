@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "home": "홈",
+    "analytics": "분석",
+    "setting": "설정"
+  },
+  "screens": {
+    "home": {
+      "title": "홈",
+      "welcome": "환영합니다!"
+    },
+    "analytics": {
+      "title": "분석",
+      "description": "데이터 분석 화면입니다."
+    },
+    "setting": {
+      "title": "설정",
+      "language": "언어 설정",
+      "korean": "한국어",
+      "english": "English",
+      "theme": "테마 설정",
+      "light": "라이트 모드",
+      "dark": "다크 모드",
+      "system": "시스템 설정 따르기"
+    }
+  },
+  "common": {
+    "save": "저장",
+    "cancel": "취소",
+    "confirm": "확인",
+    "close": "닫기"
+  }
+}
